@@ -23,19 +23,21 @@ public class GUI {
     private final JPanel secondMidPanel = new JPanel();
     private final JPanel bottomPanel = new JPanel();
     private final JPanel secondBottomPanel = new JPanel();
-//Third Panel
+    //Third Panel
     private final JPanel thirdUpPanel = new JPanel();
     private final JPanel thirdMidPanel = new JPanel();
     private final JPanel thirdBottomPanel = new JPanel();
     //Fourth Panel
 
 
-   private final JTable tablePersons = new JTable();
-   private final JTable tableClothes = new JTable();
-   private final JTable tableOrders = new JTable();
-   private final JPanel firstTab = new JPanel();
-   private final JPanel secondTab = new JPanel();
-   private final JPanel thirdTab = new JPanel();
+    private final JTable tablePersons = new JTable();
+    private final JTable tableClothes = new JTable();
+    private final JTable tableOrders = new JTable();
+    private final JPanel firstTab = new JPanel();
+    private final JPanel secondTab = new JPanel();
+    private final JPanel thirdTab = new JPanel();
+    private final JPanel fourthTab = new JPanel();
+    //FourthPanel
     private JPanel fourthPanel = new JPanel();
 
 
@@ -46,60 +48,62 @@ public class GUI {
     private final JLabel genderLabel = new JLabel("Пол");
     private final JLabel ageLabel = new JLabel("Възраст");
     private final JLabel salaryLabel = new JLabel("Заплата");
-//Second Panel
-   private final JLabel itemTypeLabel = new JLabel("Вид На Дреха");
-   private final JLabel itemNameLabel = new JLabel("Име На Дреха");
-   private final JLabel itemPriceLabel = new JLabel("Цена");
+    //Second Panel
+    private final JLabel itemTypeLabel = new JLabel("Вид На Дреха");
+    private final JLabel itemNameLabel = new JLabel("Име На Дреха");
+    private final JLabel itemPriceLabel = new JLabel("Цена");
     //Third Panel
-    //TODO change the names of the labels
-   private final JLabel ordersPersonIDLabel = new JLabel("Име на Клиент/ID");
-   private final JLabel ordersItemIDLabel = new JLabel("Продукт");
-   private final JLabel ordersQuantityLabel = new JLabel("Количество");
-   private final JLabel ordersOrderDateLabel = new JLabel("Дата на поръчката");
+    private final JLabel ordersPersonIDLabel = new JLabel("Име на Клиент/ID");
+    private final JLabel ordersItemIDLabel = new JLabel("Продукт");
+    private final JLabel ordersQuantityLabel = new JLabel("Количество");
+    private final JLabel ordersOrderDateLabel = new JLabel("Дата на поръчката");
 
     //TextFields
 // First Panel TextField
-   private final JTextField fNameTextField = new JTextField();
-   private final JTextField lNameTextField = new JTextField();
-   private final JTextField ageTextField = new JTextField();
-   private final JTextField salaryField = new JTextField();
-   //Second Panel TextField
-   private final JTextField itemTypeTextField = new JTextField();
-   private final JTextField itemNameTextField = new JTextField();
-   private final JTextField itemPriceTextField = new JTextField();
+    private final JTextField fNameTextField = new JTextField();
+    private final JTextField lNameTextField = new JTextField();
+    private final JTextField ageTextField = new JTextField();
+    private final JTextField salaryField = new JTextField();
+    //Second Panel TextField
+    private final JTextField itemTypeTextField = new JTextField();
+    private final JTextField itemNameTextField = new JTextField();
+    private final JTextField itemPriceTextField = new JTextField();
     //Third Panel TextField
-    //TODO change the names of the textfields
 
-   private final JTextField ordersFNameTextField = new JTextField();
-   private final JTextField ordersItemTextField = new JTextField();
-   private final JTextField ordersDateTextField = new JTextField();
-   private final JTextField ordersQuantityTextField = new JTextField();
+    private final JTextField ordersFNameTextField = new JTextField();
+    private final JTextField ordersItemTextField = new JTextField();
+    private final JTextField ordersDateTextField = new JTextField();
+    private final JTextField ordersQuantityTextField = new JTextField();
 
     //Buttons
     //First Panel
-   private final JButton addButtonPeople = new JButton("Добави");
-   private final JButton removeButtonPeople = new JButton("Премахни");
-   private final JButton updateButtonPeople = new JButton("Промени");
-   private final JButton searchButtonPeople = new JButton("Търсене");
-   private final JButton refreshButtonPeople = new JButton("Обнови");
-   //Second Panel
-   private final JButton addButtonClothes = new JButton("Добави");
-   private final JButton removeButtonClothes = new JButton("Премахни");
-   private final JButton updateButtonClothes = new JButton("Промени");
-   private final JButton searchButtonClothes = new JButton("Търсене");
-   private final JButton refreshButtonClothes = new JButton("Обнови");
+    private final JButton addButtonPeople = new JButton("Добави");
+    private final JButton removeButtonPeople = new JButton("Премахни");
+    private final JButton updateButtonPeople = new JButton("Промени");
+    private final JButton searchButtonPeople = new JButton("Търсене");
+    private final JButton refreshButtonPeople = new JButton("Обнови");
+    //Second Panel
+    private final JButton addButtonClothes = new JButton("Добави");
+    private final JButton removeButtonClothes = new JButton("Премахни");
+    private final JButton updateButtonClothes = new JButton("Промени");
+    private final JButton searchButtonClothes = new JButton("Търсене");
+    private final JButton refreshButtonClothes = new JButton("Обнови");
     //Third Panel
 
-   private final JButton addButtonOrders = new JButton("Добави");
-   private final JButton removeButtonOrders = new JButton("Премахни");
-   private final JButton updateButtonOrders = new JButton("Промени");
-   private final JButton searchButtonOrders = new JButton("Търсене");
-   private final JButton refreshButtonOrders = new JButton("Обнови");
+    private final JButton addButtonOrders = new JButton("Добави");
+    private final JButton removeButtonOrders = new JButton("Премахни");
+    private final JButton updateButtonOrders = new JButton("Промени");
+    private final JButton searchButtonOrders = new JButton("Търсене");
+    private final JButton refreshButtonOrders = new JButton("Обнови");
+
+    //FourthPanel TF
+    //todo reneme the textfields
+    JTextField Input = new JTextField();
 
     //Table
-   private final JScrollPane scrollPanePersons = new JScrollPane(tablePersons);
-   private final JScrollPane scrollPaneClothes = new JScrollPane(tableClothes);
-   private final JScrollPane scrollPaneOrders = new JScrollPane(tableOrders);
+    private final JScrollPane scrollPanePersons = new JScrollPane(tablePersons);
+    private final JScrollPane scrollPaneClothes = new JScrollPane(tableClothes);
+    private final JScrollPane scrollPaneOrders = new JScrollPane(tableOrders);
 
     String[] gender = {"M", "F"};
     JComboBox<String> genderCombo = new JComboBox(gender);
@@ -111,7 +115,7 @@ public class GUI {
         frame.setResizable(false);
         //First Panel
         //upPanel
-        upPanel.setBackground(new Color(50, 200, 100, 100));
+        upPanel.setBackground(new Color(255, 255, 153, 170));
         upPanel.setLayout(new GridLayout(5, 2));
         upPanel.add(fNameLabel);
         upPanel.add(fNameTextField);
@@ -123,7 +127,7 @@ public class GUI {
         upPanel.add(genderCombo);
         upPanel.add(salaryLabel);
         upPanel.add(salaryField);
-        midPanel.setBackground(new Color(0, 150, 250, 100));
+        midPanel.setBackground(new Color(255, 255, 153, 170));
         //Добавяне на данни в таблицата
         midPanel.add(addButtonPeople);
         tablePersons.addMouseListener(new MouseListener() {
@@ -202,7 +206,6 @@ public class GUI {
 
                 conn = DbConnection.getConnection();
                 String sql = "delete from persons where customerid=?";
-
                 try {
                     state = conn.prepareStatement(sql);
                     state.setInt(1, id);
@@ -211,6 +214,7 @@ public class GUI {
                     clearFormPersons();
                     state.close();
                 } catch (SQLException e1) {
+                    JOptionPane.showInternalMessageDialog(null,"Не можете да изтриете от този ред, защото има поръчка с името на този човек");
                     e1.printStackTrace();
                 }
 
@@ -224,18 +228,16 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 conn = DbConnection.getConnection();
-                String updateSql = "UPDATE persons\n" +
-                        "SET fname = ?, lname = ?, gender = ?, age = ?, salary = ?\n" +
-                        "WHERE customerid = ?";
+                String updateSql = "UPDATE persons\n" + "SET fname = ?, lname = ?, gender = ?, age = ?, salary = ?\n" + "WHERE customerid = ?";
 
-                try{
-                    state=conn.prepareStatement(updateSql);
-                    state.setString(1,fNameTextField.getText());
-                    state.setString(2,lNameTextField.getText());
-                    state.setString(3,genderCombo.getSelectedItem().toString());
+                try {
+                    state = conn.prepareStatement(updateSql);
+                    state.setString(1, fNameTextField.getText());
+                    state.setString(2, lNameTextField.getText());
+                    state.setString(3, genderCombo.getSelectedItem().toString());
                     state.setInt(4, Integer.parseInt(ageTextField.getText()));
-                    state.setFloat(5,Float.parseFloat(salaryField.getText()));
-                    state.setInt(6,id);
+                    state.setFloat(5, Float.parseFloat(salaryField.getText()));
+                    state.setInt(6, id);
                     state.execute();
                     refreshTablePersons();
                     state.close();
@@ -254,8 +256,8 @@ public class GUI {
             public void actionPerformed(ActionEvent actionEvent) {
                 conn = DbConnection.getConnection();
                 String sql = "select * from persons where customerid=?";
-String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
-                int inputid=Integer.parseInt(input);
+                String input = JOptionPane.showInputDialog(null, "Въведете CustomerID");
+                int inputid = Integer.parseInt(input);
                 try {
                     state = conn.prepareStatement(sql);
                     state.setString(1, String.valueOf(inputid));
@@ -285,7 +287,7 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
 
 
         //Second Panel
-        secondUpPanel.setBackground(new Color(50, 200, 100, 100));
+        secondUpPanel.setBackground(new Color(255, 255, 153, 170));
         secondUpPanel.setLayout(new GridLayout(5, 2));
         secondUpPanel.add(itemTypeLabel);
         secondUpPanel.add(itemTypeTextField);
@@ -293,7 +295,7 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
         secondUpPanel.add(itemNameTextField);
         secondUpPanel.add(itemPriceLabel);
         secondUpPanel.add(itemPriceTextField);
-        secondMidPanel.setBackground(new Color(0, 150, 250, 100));
+        secondMidPanel.setBackground(new Color(255, 255, 153, 170));
         //Добавяне на даннит в таблицата
         secondMidPanel.add(addButtonClothes);
         tableClothes.addMouseListener(new MouseListener() {
@@ -389,7 +391,7 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
                     state.setString(1, itemNameTextField.getText());
                     state.setString(2, itemTypeTextField.getText());
                     state.setFloat(3, Float.parseFloat(itemPriceTextField.getText()));
-                    state.setInt(4,id);
+                    state.setInt(4, id);
                     state.execute();
                     refreshTableClothes();
                     state.close();
@@ -407,8 +409,8 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 conn = DbConnection.getConnection();
-                String input= JOptionPane.showInputDialog(null,"Въведете ProductID");
-                int inputid=Integer.parseInt(input);
+                String input = JOptionPane.showInputDialog(null, "Въведете ProductID");
+                int inputid = Integer.parseInt(input);
                 String sql = "select * from items where ProductID=?";
 
                 try {
@@ -439,7 +441,7 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
         refreshTableClothes();
 
         //Third Tab
-        thirdUpPanel.setBackground(new Color(50, 200, 100, 100));
+        thirdUpPanel.setBackground(new Color(255, 255, 153, 170));
         thirdUpPanel.setLayout(new GridLayout(5, 2));
         thirdUpPanel.add(ordersPersonIDLabel);
         thirdUpPanel.add(ordersFNameTextField);
@@ -450,7 +452,7 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
 
         thirdUpPanel.add(ordersOrderDateLabel);
         thirdUpPanel.add(ordersDateTextField);
-        thirdMidPanel.setBackground(new Color(0, 150, 250, 100));
+        thirdMidPanel.setBackground(new Color(255, 255, 153, 170));
         //Добавяне на данни в таблицата
         thirdMidPanel.add(addButtonOrders);
         tableOrders.addMouseListener(new MouseListener() {
@@ -462,8 +464,7 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
                     ordersFNameTextField.setText(tableOrders.getValueAt(row, 1).toString());
                     ordersItemTextField.setText(tableOrders.getValueAt(row, 2).toString());
                     ordersDateTextField.setText(tableOrders.getValueAt(row, 3).toString());
-                    ordersQuantityTextField.setText(tableOrders.getValueAt(row,4).toString());
-
+                    ordersQuantityTextField.setText(tableOrders.getValueAt(row, 4).toString());
 
 
                 }
@@ -489,18 +490,13 @@ String input= JOptionPane.showInputDialog(null,"Въведете CustomerID");
 
             }
         });
-ordersQuantityTextField.setBackground(Color.red);
-ordersFNameTextField.setBackground(Color.cyan);
-ordersItemTextField.setBackground(Color.green);
+
         addButtonOrders.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //todo change the name to the correct fields
                 conn = DbConnection.getConnection();
-                String sql = "INSERT INTO orders (person_id, item_id, order_date, quantity)\n" +
-                        "SELECT customerid, productid, NOW(), ?\n" +
-                        "FROM persons, items\n" +
-                        "WHERE persons.fname = ? AND persons.lname = ? AND items.productid = ?";
+                String sql = "INSERT INTO orders (person_id, item_id, order_date, quantity)\n" + "SELECT customerid, productid, NOW(), ?\n" + "FROM persons, items\n" + "WHERE persons.fname = ? AND persons.lname = ? AND items.productid = ?";
                 try {
                     state = conn.prepareStatement(sql);
                     state.setString(1, ordersQuantityTextField.getText());
@@ -559,11 +555,10 @@ ordersItemTextField.setBackground(Color.green);
                 try {
 
                     state = conn.prepareStatement(updateSql);
-                    state.setString(1,ordersFNameTextField.getText());
+                    state.setString(1, ordersFNameTextField.getText());
                     state.setString(2, ordersItemTextField.getText());
-                    state.setInt(3,Integer.parseInt(ordersQuantityTextField.getText()));
-                    state.setInt(4,id);
-
+                    state.setInt(3, Integer.parseInt(ordersQuantityTextField.getText()));
+                    state.setInt(4, id);
 
 
                     state.execute();
@@ -581,41 +576,24 @@ ordersItemTextField.setBackground(Color.green);
         //Търсене по критерии
         thirdMidPanel.add(searchButtonOrders);
         searchButtonOrders.addActionListener(new ActionListener() {
-            //todo change 'Integer.parseInt(ageTextField.getText()))'
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 conn = DbConnection.getConnection();
-                String sql = "SELECT o.order_id, o.order_date, i.item_name, o.quantity \n" +
-                        "FROM orders o \n" +
-                        "JOIN items i ON o.item_id = i.productid \n" +
-                        "JOIN persons p ON o.person_id = p.customerid \n" +
-                        "WHERE p.fname = ? AND p.lname = ?;";
-                Object[] message = {
-                        "Enter first name:", new JTextField(),
-                        "Enter last name:", new JTextField()
-                };
+                String sql = "SELECT * from orders where order_id=?";
+                int option = Integer.parseInt(JOptionPane.showInputDialog(null, "Въведете OrderID"));
 
-                int option = JOptionPane.showConfirmDialog(null, message, "Въведете Имена по, които искате да търсите поръчки", JOptionPane.OK_CANCEL_OPTION);
-
-                if (option == JOptionPane.OK_OPTION) {
-                    String firstName = ((JTextField) message[1]).getText();
-                    String lastName = ((JTextField) message[3]).getText();
-                    // do something with the input values
-
-// String input = JOptionPane.showInputDialog(null,"Въведете Име На Клиент");
-                    try {
-                        state = conn.prepareStatement(sql);
-                        state.setString(1, firstName);
-                        state.setString(2, lastName);
-                        result = state.executeQuery();
-                        tableOrders.setModel(new MyModel(result));
-                    } catch (SQLException e1) {
-                        System.out.println("Error");
-                        e1.printStackTrace();
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
+                try {
+                    state = conn.prepareStatement(sql);
+                    state.setString(1, String.valueOf(option));
+                    result = state.executeQuery();
+                    tableOrders.setModel(new MyModel(result));
+                } catch (SQLException e1) {
+                    System.out.println("Error");
+                    e1.printStackTrace();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
+
             }
         });
 
@@ -633,10 +611,17 @@ ordersItemTextField.setBackground(Color.green);
         thirdBottomPanel.add(scrollPaneOrders);
         refreshTableOrders();
 
-        firstTab.setBounds(0, 0, 400, 600);
+        //Fourth Tab
+        fourthPanel.setLayout(new GridLayout());
+        fourthPanel.setBackground(new Color(255, 255, 153, 170));
+
+
+        //  firstTab.setBounds(0, 0, 400, 600);
         firstTab.setLayout(new GridLayout(3, 1));
         secondTab.setLayout(new GridLayout(3, 1));
         thirdTab.setLayout(new GridLayout(3, 1));
+        fourthTab.setLayout(new GridLayout());
+        fourthTab.add(fourthPanel);
 
 
         firstTab.add(upPanel);
@@ -654,7 +639,7 @@ ordersItemTextField.setBackground(Color.green);
         tab.add(firstTab, "Хора");
         tab.add(secondTab, "Дрехи");
         tab.add(thirdTab, "Поръчки");
-        tab.add(fourthPanel,"Справка");
+        tab.add(fourthTab, "Справка");
 
 
         //Add to frame,Showframe
@@ -675,10 +660,8 @@ ordersItemTextField.setBackground(Color.green);
             tablePersons.setModel(new MyModel(result));
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -692,10 +675,10 @@ ordersItemTextField.setBackground(Color.green);
             tableClothes.setModel(new MyModel(result));
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
     }
@@ -719,6 +702,7 @@ ordersItemTextField.setBackground(Color.green);
         ordersDateTextField.setText("");
         ordersQuantityTextField.setText("");
     }
+
     public void refreshTableOrders() {
         conn = DbConnection.getConnection();
 
@@ -728,10 +712,10 @@ ordersItemTextField.setBackground(Color.green);
             tableOrders.setModel(new MyModel(result));
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
     }
