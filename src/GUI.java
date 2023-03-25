@@ -33,12 +33,15 @@ public class GUI {
     private final JTable tablePersons = new JTable();
     private final JTable tableClothes = new JTable();
     private final JTable tableOrders = new JTable();
+    JTable selectTable = new JTable();
     private final JPanel firstTab = new JPanel();
     private final JPanel secondTab = new JPanel();
     private final JPanel thirdTab = new JPanel();
     private final JPanel fourthTab = new JPanel();
     //FourthPanel
-    private JPanel fourthPanel = new JPanel();
+    private JPanel fourthUpPanel = new JPanel();
+    private JPanel fourthMidPanel = new JPanel();
+    private JPanel fourthBottomPanel = new JPanel();
 
 
     //Labels
@@ -53,10 +56,13 @@ public class GUI {
     private final JLabel itemNameLabel = new JLabel("Име На Дреха");
     private final JLabel itemPriceLabel = new JLabel("Цена");
     //Third Panel
-    private final JLabel ordersPersonIDLabel = new JLabel("Име на Клиент/ID");
-    private final JLabel ordersItemIDLabel = new JLabel("Продукт");
+    private final JLabel ordersPersonIDLabel = new JLabel("Първо име/ID");
+    private final JLabel ordersItemIDLabel = new JLabel("Второ Име/Продукт");
     private final JLabel ordersQuantityLabel = new JLabel("Количество");
-    private final JLabel ordersOrderDateLabel = new JLabel("Дата на поръчката");
+    private final JLabel ordersOrderDateLabel = new JLabel("ProductId/Дата на поръчката");
+    //Fourth Panel
+    private final JLabel fouthPanelfNameLabel = new JLabel("Въведете Име");
+    private final JLabel fouthPanelLNameLabel = new JLabel("Въведете Фамилия");
 
     //TextFields
 // First Panel TextField
@@ -74,7 +80,9 @@ public class GUI {
     private final JTextField ordersItemTextField = new JTextField();
     private final JTextField ordersDateTextField = new JTextField();
     private final JTextField ordersQuantityTextField = new JTextField();
-
+    //Fourth Panel
+    private final JTextField fouthPanelfNameTextField = new JTextField("");
+    private final JTextField fouthPanelLNameTextField = new JTextField("");
     //Buttons
     //First Panel
     private final JButton addButtonPeople = new JButton("Добави");
@@ -96,14 +104,14 @@ public class GUI {
     private final JButton searchButtonOrders = new JButton("Търсене");
     private final JButton refreshButtonOrders = new JButton("Обнови");
 
-    //FourthPanel TF
-    //todo reneme the textfields
-    JTextField Input = new JTextField();
+    //FourthPanel
+    JButton fourthPanelSearchButton = new JButton("Търсене");
 
     //Table
     private final JScrollPane scrollPanePersons = new JScrollPane(tablePersons);
     private final JScrollPane scrollPaneClothes = new JScrollPane(tableClothes);
     private final JScrollPane scrollPaneOrders = new JScrollPane(tableOrders);
+    private final JScrollPane scrollPaneSelect = new JScrollPane(selectTable);
 
     String[] gender = {"M", "F"};
     JComboBox<String> genderCombo = new JComboBox(gender);
@@ -111,7 +119,7 @@ public class GUI {
 
     GUI() {
 
-        frame.setSize(400, 600);
+        frame.setSize(1024, 600);
         frame.setResizable(false);
         //First Panel
         //upPanel
@@ -281,7 +289,7 @@ public class GUI {
         });
 
         //bottomPanel
-        scrollPanePersons.setPreferredSize(new Dimension(350, 150));
+        scrollPanePersons.setPreferredSize(new Dimension(900, 150));
         bottomPanel.add(scrollPanePersons);
         refreshTablePersons();
 
@@ -370,6 +378,8 @@ public class GUI {
                     clearFormClothes();
                     state.close();
                 } catch (SQLException e1) {
+                    JOptionPane.showInternalMessageDialog(null,"Не можете да изтриете този артикул, защото има \n" +
+                    "направена поръчка. Изтрийте първо поръчката");
                     e1.printStackTrace();
                 }
 
@@ -436,7 +446,7 @@ public class GUI {
         });
 
         //bottomPanel
-        scrollPaneClothes.setPreferredSize(new Dimension(350, 150));
+        scrollPaneClothes.setPreferredSize(new Dimension(900, 150));
         secondBottomPanel.add(scrollPaneClothes);
         refreshTableClothes();
 
@@ -607,21 +617,58 @@ public class GUI {
         });
 
         //bottomPanel
-        scrollPaneOrders.setPreferredSize(new Dimension(350, 150));
+        scrollPaneOrders.setPreferredSize(new Dimension(900, 150));
         thirdBottomPanel.add(scrollPaneOrders);
         refreshTableOrders();
 
         //Fourth Tab
-        fourthPanel.setLayout(new GridLayout());
-        fourthPanel.setBackground(new Color(255, 255, 153, 170));
+        fourthUpPanel.setLayout(new GridLayout(2,2));
+        fourthUpPanel.setBackground(new Color(255, 255, 153, 170));
+        fourthUpPanel.add(fouthPanelfNameLabel);
+        fourthUpPanel.add(fouthPanelfNameTextField);
+        fourthUpPanel.add(fouthPanelLNameLabel);
+        fourthUpPanel.add(fouthPanelLNameTextField);
+        fourthMidPanel.add(fourthPanelSearchButton);
+        scrollPaneSelect.setPreferredSize(new Dimension(900, 150));
 
+        fourthBottomPanel.add(scrollPaneSelect);
+        fourthPanelSearchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                String sql ="SELECT p.customerid, p.fname, p.lname, i.item_name, i.item_price, o.order_date\n" +
+                        "FROM persons p, items i, orders o\n" +
+                        "WHERE p.customerid = o.person_id\n" +
+                        "  AND i.productid = o.item_id\n" +
+                        "  AND p.fname = ?\n" +
+                        "  AND p.lname = ?";
+                try {
+
+                    state=conn.prepareStatement(sql);
+state.setString(1,fouthPanelfNameTextField.getText());
+state.setString(2,fouthPanelLNameTextField.getText());
+                    result= state.executeQuery();
+                    selectTable.setModel(new MyModel(result));
+
+
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+        fourthMidPanel.setBackground(new Color(255,255,153,170));
 
         //  firstTab.setBounds(0, 0, 400, 600);
         firstTab.setLayout(new GridLayout(3, 1));
         secondTab.setLayout(new GridLayout(3, 1));
         thirdTab.setLayout(new GridLayout(3, 1));
-        fourthTab.setLayout(new GridLayout());
-        fourthTab.add(fourthPanel);
+        fourthTab.setLayout(new GridLayout(3,1));
+        fourthTab.add(fourthUpPanel);
+        fourthTab.add(fourthMidPanel);
+        fourthTab.add(fourthBottomPanel);
 
 
         firstTab.add(upPanel);
